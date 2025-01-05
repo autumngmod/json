@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "smokkkin's mission system schema",
+  "type": "object",
+  "properties": {
+    "missions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "integer" },
+                "description": { "type": "string" },
+                "type": {
+                  "type": "string",
+                  "enum": ["collect", "kill", "destroy", "interact"]
+                },
+                "amount": { "type": "integer" },
+                "target": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "class": { "type": "string" },
+                    "model": { "type": "string" }
+                  },
+                  "required": []
+                }
+              },
+              "required": ["id", "description", "type"]
+            }
+          },
+          "reward": {
+            "type": "object",
+            "properties": {
+              "money": { "type": "integer" },
+              "donateMoney": { "type": "integer" },
+              "xp": { "type": "integer" }
+            },
+            "required": []
+          }
+        },
+        "required": ["id", "name", "tasks", "reward"]
+      }
+    }
+  },
+  "required": ["missions"]
+}
