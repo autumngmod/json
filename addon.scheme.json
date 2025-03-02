@@ -19,8 +19,7 @@
     "authors": {
       "type": "array",
       "items": {
-        "type": "string",
-        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        "type": "string"
       }
     },
     "description": {
@@ -29,7 +28,8 @@
     },
     "version": {
       "description": "Version of the addon",
-      "type": "string"
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
     },
     "githubRepo": {
       "description": "GitHub repository of the addon",
